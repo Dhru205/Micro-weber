@@ -9,13 +9,13 @@
 
 
 
-resource "aws_apprunner_service" "example" {
+resource "aws_apprunner_service" "micro" {
 
-  service_name = "example"
+  service_name = "micro"
 
   source_configuration {
     authentication_configuration{
-      access_role_arn=  "arn:aws:iam::530211691714:role/micro-web"
+      access_role_arn=  "arn:aws:iam::530211691714:role/service-role/microapp"
 }
     
     image_repository {
@@ -31,7 +31,7 @@ resource "aws_apprunner_service" "example" {
   }
 
   tags = {
-    Name = "example-apprunner-service"
+    Name = "micro-apprunner-service"
   }
 }
 
